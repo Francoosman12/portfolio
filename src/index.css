@@ -1,0 +1,39 @@
+/* Directivas de Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos Globales */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Fuente moderna y legible */
+  background-color: #f9fafb; /* Fondo claro para todo el sitio */
+  color: #333; /* Color de texto oscuro para una buena legibilidad */
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif; /* Fuente más destacada para títulos */
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* Los enlaces toman el color de su contenedor */
+}
+
+a:hover {
+  color: #1e4ed4; /* Color para enlaces cuando el mouse pasa sobre ellos */
+}
+
+/* Estilo para el contenedor de la página */
+.container {
+  width: 100%;
+  max-width: 1280px; /* Máximo ancho para pantallas grandes */
+  margin: 0 auto; /* Centrado horizontal */
+  padding: 0 16px; /* Espaciado a los lados */
+}

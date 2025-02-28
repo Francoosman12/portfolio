@@ -1,0 +1,174 @@
+/* Asegurándonos de que el scroll horizontal no se active en ningún momento */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Evitar cualquier desplazamiento horizontal */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Asegura que el tamaño total del contenedor se respete */
+}
+
+/* Estilo base para el contenedor principal */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow-x: hidden; /* Evita el desbordamiento lateral */
+}
+
+/* Estilo para la imagen y su contenedor */
+.image-wrapper {
+  position: absolute;
+  width: 100%;
+  max-width: 250px; /* Controla el tamaño máximo en pantallas pequeñas */
+  height: auto;
+  aspect-ratio: 1/1; /* Mantiene la proporción circular */
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen se recorte en lugar de deformarse */
+  border-radius: 50%;
+}
+
+/* Estilo para las capas difuminadas alrededor de la imagen */
+.imagen-presentacion {
+  position: relative;
+}
+
+.imagen-presentacion::before,
+.imagen-presentacion::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.imagen-presentacion::before {
+  box-shadow: 0 0 50px 30px rgba(0, 0, 0, 0.2);
+}
+
+.imagen-presentacion::after {
+  box-shadow: 0 0 100px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los textos */
+.text-wrapper {
+  text-align: center;
+  max-width: 90%;
+}
+
+.text-wrapper h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.text-wrapper h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.text-wrapper p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Botón de scroll */
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 10px;
+  }
+
+  .image-wrapper {
+    max-width: 200px; /* Reduce el tamaño en dispositivos más pequeños */
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .image-wrapper {
+    max-width: 180px;
+  }
+  
+
+  .text-wrapper h1 {
+    font-size: 1.5rem;
+  }
+
+  .text-wrapper h2 {
+    font-size: 1.1rem;
+  }
+
+  .text-wrapper p {
+    font-size: 0.85rem;
+  }
+
+  .scroll-button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 355px) {
+  
+  .image-wrapper {
+    max-width: 150px;
+  }
+
+  .text-wrapper h1 {
+    font-size: 1.2rem;
+  }
+
+  .text-wrapper h2 {
+    font-size: 1rem;
+  }
+
+  .text-wrapper p {
+    font-size: 0.8rem;
+  }
+
+  .scroll-button {
+    width: 35px;
+    height: 35px;
+  }
+}
