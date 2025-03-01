@@ -5,6 +5,7 @@ import {
   faLinkedin,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -101,7 +102,7 @@ const Navbar = () => {
           {/* Redes sociales */}
           <div className="d-flex ms-3">
             <a
-              href="https://github.com/tuusuario"
+              href="https://github.com/Francoosman12"
               target="_blank"
               rel="noopener noreferrer"
               className="text-dark me-3"
@@ -109,7 +110,7 @@ const Navbar = () => {
               <FontAwesomeIcon icon={faGithub} size="lg" />
             </a>
             <a
-              href="https://linkedin.com/in/tuusuario"
+              href="https://www.linkedin.com/in/francoemanuelosm%C3%A1n/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-dark me-3"

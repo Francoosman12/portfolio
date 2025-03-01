@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="min-vh-100 d-flex align-items-center bg-white text-dark py-5 mt-5 mt-md-0 mt-lg-0"
+      className="home-container min-vh-100 d-flex align-items-center text-dark py-5 mt-5 mt-md-0 mt-lg-0"
       style={{ position: "relative" }}
     >
       <div

@@ -27,7 +27,7 @@ html, body {
 
 /* Estilo para la imagen y su contenedor */
 .image-wrapper {
-  position: absolute;
+  position: relative;
   width: 100%;
   max-width: 250px; /* Controla el tamaño máximo en pantallas pequeñas */
   height: auto;
@@ -44,29 +44,26 @@ html, body {
   border-radius: 50%;
 }
 
-/* Estilo para las capas difuminadas alrededor de la imagen */
-.imagen-presentacion {
+/* Estilo para el efecto de réplica alrededor de la imagen */
+.imagen-difuminada {
   position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-.imagen-presentacion::before,
-.imagen-presentacion::after {
+.imagen-difuminada::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
+  right: 0;
+  bottom: 0;
+  background: url('../assets/THQU1MGPN-U026F1YHZ0F-b17965233ce9-512.jpg') no-repeat center center / cover;
+  filter: blur(20px);
   z-index: -1;
-}
-
-.imagen-presentacion::before {
-  box-shadow: 0 0 50px 30px rgba(0, 0, 0, 0.2);
-}
-
-.imagen-presentacion::after {
-  box-shadow: 0 0 100px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
 }
 
 /* Estilo para los textos */
@@ -129,7 +126,6 @@ html, body {
   .image-wrapper {
     max-width: 180px;
   }
-  
 
   .text-wrapper h1 {
     font-size: 1.5rem;

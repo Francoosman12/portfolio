@@ -1,0 +1,26 @@
+/* Agrega esto a tu archivo CSS */
+
+.nav-link {
+    position: relative;
+    display: inline-block;
+    color: #000; /* Ajusta el color según tu preferencia */
+    text-decoration: none;
+    padding: 5px 0;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    background-color: #000; /* Ajusta el color según tu preferencia */
+    height: 2px; /* Ajusta el grosor del subrayado */
+    transition: left 0.3s ease, right 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    left: 25%;
+    right: 25%;
+  }
+  
