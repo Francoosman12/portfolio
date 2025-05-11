@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "../styles/Contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,110 +32,73 @@ const Contact = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="d-flex flex-column justify-content-center align-items-center text-center min-vh-100 bg-white"
-    >
-      <div className="container">
-        {/* Título */}
-        <h2 className="display-4 mb-4 text-dark" data-aos="fade-down">
-          Contacto
-        </h2>
-
-        {/* Descripción breve */}
-        <p
-          className="lead text-muted mb-4 mx-auto"
-          style={{ maxWidth: "600px" }}
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          Si tienes alguna pregunta o quieres saber más sobre mis proyectos, no
-          dudes en enviarme un mensaje.
-        </p>
-
-        {/* Formulario */}
+    <section id="contact" className="contact-container">
+      <div className="contact-content">
+        {/* ✅ Formulario a la izquierda */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white p-5 rounded shadow-lg mx-auto"
-          style={{ maxWidth: "600px" }}
+          className="contact-form"
           data-aos="zoom-in"
           data-aos-delay="400"
         >
-          <div className="row">
-            <div className="col-md-6">
-              <div className="form-group mb-3">
-                <label htmlFor="name" className="h5 text-muted">
-                  Nombre
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="form-control"
-                  placeholder="Tu nombre"
-                  required
-                />
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="form-group mb-3">
-                <label htmlFor="email" className="h5 text-muted">
-                  Correo Electrónico
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="form-control"
-                  placeholder="tucorreo@ejemplo.com"
-                  required
-                />
-              </div>
-            </div>
+          <h2 className="display-4 mb-4">Contacto</h2>
+          <div className="form-group">
+            <label htmlFor="name">Nombre</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Tu nombre"
+              required
+            />
           </div>
 
-          <div className="form-group mt-3">
-            <label htmlFor="message" className="h5 text-muted">
-              Mensaje
-            </label>
+          <div className="form-group">
+            <label htmlFor="email">Correo Electrónico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="tucorreo@ejemplo.com"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="message">Mensaje</label>
             <textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="form-control"
               rows="4"
-              placeholder="Escribe tu mensaje aquí..."
+              placeholder="Describe tu problema o lo que buscas automatizar..."
               required
             ></textarea>
           </div>
 
-          <button
-            type="submit"
-            className="btn btn-dark btn-lg btn-block mt-4"
-            data-aos="fade-up"
-            data-aos-delay="600"
-          >
+          <button type="submit" className="submit-btn">
             Enviar Mensaje
           </button>
         </form>
 
-        {/* Mensaje de confirmación */}
-        {isSubmitted && (
-          <div
-            className="mt-4 alert alert-success fade show"
-            role="alert"
-            data-aos="fade-in"
-            data-aos-delay="800"
-          >
-            ¡Gracias por tu mensaje! Me pondré en contacto contigo lo antes
-            posible.
-          </div>
-        )}
+        {/* ✅ Texto explicativo a la derecha */}
+        <div className="contact-text">
+          <h2 className="display-4 mb-4">¿Cómo puedo ayudarte?</h2>
+          <p className="lead">
+            Si tienes un problema que necesitas resolver o buscas automatizar un
+            proceso, cuéntame más sobre tu situación.
+          </p>
+          <p className="lead">
+            ¿Necesitas una aplicación web? ¿Quieres optimizar tu flujo de
+            trabajo? Déjame saber qué necesitas y juntos encontraremos la mejor
+            solución.
+          </p>
+        </div>
       </div>
     </section>
   );

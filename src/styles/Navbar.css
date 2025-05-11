@@ -1,26 +1,61 @@
-/* Agrega esto a tu archivo CSS */
+/* Estilos generales */
+.navbar .container-fluid{
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  justify-content: space-between;
+}
 
+/* Estilos para el logo */
+.navbar-logo {
+  height: 50px; /* Ajusta el tamaño según necesites */
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Navbar por defecto */
+.navbar-default {
+  background-color: #06b6d4; /* scooter[500] */
+  color: #ecfcff; /* scooter[50] */
+}
+
+/* Navbar cuando se hace scroll */
+.navbar-scrolled {
+  background-color: #0899b2; /* scooter[600] */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos del texto */
+.navbar-brand {
+  color: #ecfcff !important;
+  font-size: 1.5rem;
+}
+
+/* Botón de navegación */
 .nav-link {
-    position: relative;
-    display: inline-block;
-    color: #000; /* Ajusta el color según tu preferencia */
-    text-decoration: none;
-    padding: 5px 0;
-  }
-  
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    bottom: 0;
-    background-color: #000; /* Ajusta el color según tu preferencia */
-    height: 2px; /* Ajusta el grosor del subrayado */
-    transition: left 0.3s ease, right 0.3s ease;
-  }
-  
-  .nav-link:hover::after {
-    left: 25%;
-    right: 25%;
-  }
-  
+  color: #ecfcff !important;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.nav-link:hover {
+  color: #67e4f9 !important; /* scooter[300] */
+}
+
+/* Redes sociales */
+.social-icons a {
+  color: #ecfcff;
+  margin-right: 15px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #67e4f9; /* scooter[300] */
+  transform: scale(1.1);
+}
+

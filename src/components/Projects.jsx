@@ -1,37 +1,100 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/Projects.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
+import { ExternalLink, Github } from "lucide-react";
+import pdv from "../assets/pdv-proyecto.png";
+import depie from "../assets/depie-proyecto.png";
+import hermanos from "../assets/3h-mantenimiento-proyecto.png";
+import casateka from "../assets/casateka-proyecto.png";
 
 const projects = [
   {
-    title: "E-commerce Web App",
+    title: "Catálogo Online - PDV",
     description:
       "Aplicación de comercio electrónico con React.js, Node.js y MongoDB.",
-    technologies: ["React.js", "Node.js", "MongoDB"],
-    image: "https://via.placeholder.com/400x250?text=E-commerce",
-    link: "https://github.com/tu-usuario/ecommerce-web-app",
-    demo: "https://ecommerce-demo.com",
+    imageUrl: pdv,
+    link: "https://pdvcatalogo.netlify.app",
+    codeUrl: "https://github.com/tu-usuario/pdv",
   },
   {
-    title: "Portfolio Website",
+    title: "Gimnasio Online",
     description:
       "Mi sitio web personal para mostrar mi portafolio como desarrollador full stack.",
-    technologies: ["React.js", "Bootstrap"],
-    image: "https://via.placeholder.com/400x250?text=Portfolio",
-    link: "https://github.com/tu-usuario/portfolio-website",
-    demo: "https://tuportfolio.com",
+    imageUrl: depie,
+    link: "https://depie-frontend.vercel.app/",
+    codeUrl: "https://github.com/tu-usuario/gimnasio",
   },
   {
-    title: "Task Manager App",
+    title: "3H - Mantenimiento",
     description:
       "Gestor de tareas con autenticación y base de datos en tiempo real.",
-    technologies: ["React.js", "Firebase"],
-    image: "https://via.placeholder.com/400x250?text=Task+Manager",
-    link: "https://github.com/tu-usuario/task-manager",
-    demo: "https://task-manager-demo.com",
+    imageUrl: hermanos,
+    link: "https://3hmantenimiento.netlify.app/",
+    codeUrl: "https://github.com/tu-usuario/3h-mantenimiento",
+  },
+  {
+    title: "Casa Teka",
+    description:
+      "Gestor de tareas con autenticación y base de datos en tiempo real.",
+    imageUrl: casateka,
+    link: "https://casateka.netlify.app/",
+    codeUrl: "https://github.com/tu-usuario/casateka",
   },
 ];
+
+const ProjectCard = ({ title, description, imageUrl, link, codeUrl }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className="project-card"
+      data-aos="fade-up"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Imagen del proyecto */}
+      <div className="image-container">
+        <img src={imageUrl} alt={title} className="project-image" />
+      </div>
+
+      {/* Contenido que aparece en hover */}
+      {isHovered && (
+        <div className="card-overlay">
+          <h3 className="card-title">{title}</h3>
+          <p className="card-description">{description}</p>
+          <div className="card-buttons">
+            {codeUrl && (
+              <a
+                href={codeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn"
+              >
+                <Github className="icon" /> Código
+              </a>
+            )}
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn"
+              >
+                <ExternalLink className="icon" /> Demo
+              </a>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Projects = () => {
   useEffect(() => {
@@ -39,77 +102,25 @@ const Projects = () => {
   }, []);
 
   return (
-    <section
-      id="projects"
-      className="py-5 bg-light min-vh-100 d-flex align-items-center"
-    >
-      <div className="container text-center">
-        {/* Título */}
-        <h2 className="display-4 mb-4 text-dark" data-aos="fade-down">
-          Proyectos Destacados
-        </h2>
+    <section id="projects" className="projects-container">
+      <div className="projects-content">
+        {/* Texto estático a la izquierda */}
+        <div className="projects-text">
+          <h2 className="display-4 mb-4" data-aos="fade-down">
+            Proyectos Destacados
+          </h2>
+          <p className="lead mb-5" data-aos="fade-up">
+            Descubre algunos de los proyectos en los que he trabajado, donde
+            fusiono creatividad y tecnología para desarrollar soluciones
+            innovadoras. Explora el código en GitHub o experimenta la
+            demostración en vivo para verlos en acción.
+          </p>
+        </div>
 
-        {/* Descripción breve */}
-        <p
-          className="lead text-muted mb-5 mx-auto"
-          style={{ maxWidth: "700px" }}
-          data-aos="fade-up"
-        >
-          Estos son algunos de los proyectos en los que he trabajado. Puedes
-          explorar el código en GitHub o ver la demostración en vivo.
-        </p>
-
-        {/* Galería de Proyectos */}
-        <div className="row g-4">
+        {/* Grid de proyectos */}
+        <div className="projects-grid">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="col-md-6 col-lg-4"
-              data-aos="zoom-in"
-              data-aos-delay={index * 200}
-            >
-              <div className="card h-100 shadow-lg border-0 rounded-4">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="card-img-top rounded-top-4"
-                  style={{ height: "200px", objectFit: "cover" }}
-                />
-                <div className="card-body d-flex flex-column">
-                  <h5 className="card-title text-primary">{project.title}</h5>
-                  <p className="card-text text-muted">{project.description}</p>
-
-                  {/* Tecnologías */}
-                  <div className="mb-3">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="badge bg-info me-1">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Enlaces */}
-                  <div className="mt-auto d-flex justify-content-center gap-2">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-outline-dark"
-                    >
-                      GitHub
-                    </a>
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-primary"
-                    >
-                      Demo
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ProjectCard key={index} {...project} />
           ))}
         </div>
       </div>

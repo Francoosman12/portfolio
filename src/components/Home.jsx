@@ -7,7 +7,7 @@ import { ArrowUp } from "lucide-react";
 
 const Home = () => {
   const [text, setText] = useState("");
-  const name = "Franco";
+  const name = "DevOs";
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
@@ -39,49 +39,78 @@ const Home = () => {
   };
 
   return (
-    <section
-      id="home"
-      className="home-container min-vh-100 d-flex align-items-center text-dark py-5 mt-5 mt-md-0 mt-lg-0"
-      style={{ position: "relative" }}
-    >
-      <div
-        className="container d-flex align-items-center"
-        style={{ height: "100vh" }}
-      >
-        <div className="row w-100">
-          <div
-            className="col-md-6 d-flex flex-column justify-content-center"
-            data-aos="fade-right"
-          >
+    <section id="home" className="home-container">
+      <div className="container">
+        <div className="row align-items-center text-center text-lg-start">
+          {/* Texto y botones */}
+          <div className="col-lg-6 text-left" data-aos="fade-right">
+            <img src="" alt="" />
             <h1 className="display-1 fw-bold mb-3">
-              Hola, soy <span className="text-black">{text}</span>
+              Hola, soy <span className="highlight">{text}</span>
             </h1>
             <h2 className="display-6 mb-4">Desarrollador Web Full Stack</h2>
-            <p className="lead mb-4" style={{ maxWidth: "600px" }}>
+            <p className="lead mb-4">
               Transformando ideas en{" "}
-              <span className="fw-bold">soluciones web</span> modernas con{" "}
-              <span className="fw-bold">React.js</span> y{" "}
-              <span className="fw-bold">Node.js</span>.
+              <span className="fw-bold">soluciones digitales </span>
+              innovadoras y escalables con{" "}
+              <span className="fw-bold">React.js</span> y
+              <span className="fw-bold"> Node.js</span>.
             </p>
+
+            {/* Botones */}
+            <div className="d-flex gap-3 botones ">
+              <button className="btn btn-outline-light">Contrátame</button>
+              <button className="btn btn-outline-light">Descargar CV</button>
+            </div>
+
+            {/* Redes sociales */}
+            <div className="social-container mt-4">
+              <p className="follow-text">Sígueme en</p>
+              <div className="social-icons">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-whatsapp"></i>
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
           </div>
 
-          <div className="col-md-6 d-flex justify-content-center align-items-center">
-            <div className="imagen-presentacion">
-              <div
-                className="imagen-difuminada"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                  position: "relative",
-                }}
-              >
+          {/* Imagen */}
+          <div
+            className="col-lg-6 d-flex justify-content-center align-items-center"
+            data-aos="fade-left"
+          >
+            <div className="imagen-container">
+              <div className="imagen-borde"></div>
+              <div className="imagen-presentacion">
                 <img
                   src={imagenDePresentacion}
                   alt="Franco"
-                  className="img-fluid w-100 h-100"
-                  style={{ objectFit: "cover" }}
+                  className="img-fluid"
                 />
               </div>
             </div>
@@ -90,23 +119,7 @@ const Home = () => {
       </div>
 
       {showScrollButton && (
-        <button
-          onClick={scrollToTop}
-          className="position-fixed d-flex align-items-center justify-content-center"
-          style={{
-            bottom: "20px",
-            right: "20px",
-            zIndex: 1000,
-            width: "50px",
-            height: "50px",
-            borderRadius: "50%",
-            backgroundColor: "#000000",
-            color: "#fff",
-            boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
+        <button onClick={scrollToTop} className="scroll-button">
           <ArrowUp size={24} color="white" />
         </button>
       )}

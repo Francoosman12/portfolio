@@ -1,0 +1,116 @@
+/* Fondo con degradado */
+.skills-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #06b6d4, #0899b2);
+  color: #ecfcff;
+  padding: 50px 20px;
+}
+
+/* Estilos del título */
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* Estilos de la descripción */
+.lead {
+  font-size: 1.2rem;
+  max-width: 700px;
+}
+
+/* Tarjetas de habilidades */
+/* Tarjetas de habilidades */
+.skill-card .card {
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.1); /* ✅ Fondo transparente */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* ✅ Borde sutil */
+  backdrop-filter: blur(10px); /* ✅ Efecto de desenfoque */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* ✅ Efecto de hover */
+.skill-card .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Contenedor de íconos */
+.icon-container {
+  margin-bottom: 15px;
+  color: #ecfcff; /* ✅ Asegurar que los íconos sean visibles */
+}
+
+/* Estilos del texto */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ecfcff !important; /* ✅ Asegurar que el texto sea visible */
+}
+
+
+
+/* Colores de habilidades */
+.skill-react {
+  background-color: #22d0ee; /* scooter[400] */
+}
+
+.skill-node {
+  background-color: #0e7d90; /* scooter[700] */
+}
+
+.skill-mongo {
+  background-color: #165863; /* scooter[900] */
+}
+
+.skill-js {
+  background-color: #a5effc; /* scooter[200] */
+}
+
+.skill-bootstrap {
+  background-color: #67e4f9; /* scooter[300] */
+}
+
+.skill-github {
+  background-color: #083b44; /* scooter[950] */
+}
+
+.skill-bigquery {
+  background-color: #cff7fe; /* scooter[100] */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+  .skill-card .card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 355px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 0.9rem;
+  }
+
+  .skill-card .card {
+    padding: 10px;
+  }
+}
+
+
+
