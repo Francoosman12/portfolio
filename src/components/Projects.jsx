@@ -15,25 +15,24 @@ import casateka from "../assets/casateka-proyecto.png";
 
 const projects = [
   {
-    title: "Catálogo Online - PDV",
-    description:
-      "Aplicación de comercio electrónico con React.js, Node.js y MongoDB.",
-    imageUrl: pdv,
-    link: "https://pdvcatalogo.netlify.app",
-    codeUrl: "https://github.com/Francoosman12/catalogo-pdv.git",
-  },
-  {
     title: "Gimnasio Online",
     description:
-      "Mi sitio web personal para mostrar mi portafolio como desarrollador full stack.",
+      "App Web destinada a ofrecer un servicio de gimnasio online, es decir sus rutinas totalmente personalizadas.",
     imageUrl: depie,
     link: "https://depie-frontend.vercel.app/",
     codeUrl: "https://github.com/tu-usuario/gimnasio",
   },
   {
+    title: "Catálogo Online - PDV",
+    description: "Aplicación de comercio creada como servicio de muestra.",
+    imageUrl: pdv,
+    link: "https://pdvcatalogo.netlify.app",
+    codeUrl: "https://github.com/Francoosman12/catalogo-pdv.git",
+  },
+  {
     title: "3H - Mantenimiento",
     description:
-      "Gestor de tareas con autenticación y base de datos en tiempo real.",
+      "Landing Page para mostrar los servicios que esta empresa ofrece..",
     imageUrl: hermanos,
     link: "https://3hmantenimiento.netlify.app/",
     codeUrl: "https://github.com/tu-usuario/3h-mantenimiento",
