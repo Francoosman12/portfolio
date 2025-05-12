@@ -38,29 +38,52 @@ const Home = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // ✅ Función para redirigir a la descarga del CV en Google Drive
+  const handleDownloadCV = () => {
+    window.open(
+      "https://drive.google.com/file/d/1762d_4BYcxC1YNtZRzoSsCyZFHEQY7Td/view?usp=sharing",
+      "_blank"
+    );
+  };
+
+  const handleGoToContact = () => {
+    const contactSection = document.getElementById("contact"); // ✅ Busca la sección de contacto
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" }); // ✅ Hace scroll suave
+    }
+  };
+
   return (
     <section id="home" className="home-container">
       <div className="container">
         <div className="row align-items-center text-center text-lg-start">
           {/* Texto y botones */}
           <div className="col-lg-6 text-left" data-aos="fade-right">
-            <img src="" alt="" />
             <h1 className="display-1 fw-bold mb-3">
               Hola, soy <span className="highlight">{text}</span>
             </h1>
             <h2 className="display-6 mb-4">Desarrollador Web Full Stack</h2>
             <p className="lead mb-4">
               Transformando ideas en{" "}
-              <span className="fw-bold">soluciones digitales </span>
-              innovadoras y escalables con{" "}
-              <span className="fw-bold">React.js</span> y
-              <span className="fw-bold"> Node.js</span>.
+              <span className="fw-bold">soluciones digitales</span> innovadoras
+              y escalables con <span className="fw-bold">React.js</span> y{" "}
+              <span className="fw-bold">Node.js</span>.
             </p>
 
-            {/* Botones */}
-            <div className="d-flex gap-3 botones ">
-              <button className="btn btn-outline-light">Contrátame</button>
-              <button className="btn btn-outline-light">Descargar CV</button>
+            {/* ✅ Botones */}
+            <div className="d-flex gap-3 botones">
+              <button
+                className="btn btn-outline-light"
+                onClick={handleGoToContact}
+              >
+                Contrátame
+              </button>
+              <button
+                className="btn btn-outline-light"
+                onClick={handleDownloadCV}
+              >
+                Descargar CV
+              </button>
             </div>
 
             {/* Redes sociales */}
@@ -68,28 +91,28 @@ const Home = () => {
               <p className="follow-text">Sígueme en</p>
               <div className="social-icons">
                 <a
-                  href="https://instagram.com"
+                  href="https://walink.co/9d4cc5"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <i className="fab fa-whatsapp"></i>
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/fran_osman12/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://github.com/Francoosman12"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-twitter"></i>
+                  <i className="fab fa-github"></i>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/francoemanuelosm%C3%A1n/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

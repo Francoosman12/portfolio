@@ -205,6 +205,13 @@
     text-align: center;
   }
 
+    .botones{
+    justify-content: center;
+  }
+  .social-icons{
+    justify-content: center;
+  }
+
   .home-text {
     padding-right: 0;
     margin-bottom: 30px;
@@ -213,6 +220,7 @@
   .imagen-container {
     width: 180px; /* ✅ Reducir tamaño en móviles */
     height: 180px;
+    margin-top: 50px;
   }
 
   .imagen-borde {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../styles/Contact.css";
+import emailjs from "emailjs-com"; // ✅ Importar EmailJS
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,9 +27,29 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    console.log("Formulario enviado", formData);
-    setTimeout(() => setIsSubmitted(false), 5000); // Oculta el mensaje después de 5 segundos
+
+    // ✅ Configurar EmailJS
+    emailjs
+      .send(
+        "default_service", // Reemplaza con tu Service ID de EmailJS
+        "template_8u8cz9e", // Reemplaza con tu Template ID de EmailJS
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        "PeAZYh_EVqYdC-rv8" // Reemplaza con tu Public Key de EmailJS
+      )
+      .then(
+        (response) => {
+          console.log("Correo enviado con éxito", response);
+          setIsSubmitted(true);
+          setTimeout(() => setIsSubmitted(false), 5000);
+        },
+        (error) => {
+          console.error("Error al enviar el correo", error);
+        }
+      );
   };
 
   return (
@@ -100,6 +121,18 @@ const Contact = () => {
           </p>
         </div>
       </div>
+
+      {/* ✅ Mensaje de éxito */}
+      {isSubmitted && (
+        <div
+          className="success-message"
+          data-aos="fade-in"
+          data-aos-delay="800"
+        >
+          ¡Gracias por tu mensaje! Me pondré en contacto contigo lo antes
+          posible.
+        </div>
+      )}
     </section>
   );
 };

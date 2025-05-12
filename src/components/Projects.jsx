@@ -20,7 +20,7 @@ const projects = [
       "Aplicación de comercio electrónico con React.js, Node.js y MongoDB.",
     imageUrl: pdv,
     link: "https://pdvcatalogo.netlify.app",
-    codeUrl: "https://github.com/tu-usuario/pdv",
+    codeUrl: "https://github.com/Francoosman12/catalogo-pdv.git",
   },
   {
     title: "Gimnasio Online",
@@ -69,16 +69,6 @@ const ProjectCard = ({ title, description, imageUrl, link, codeUrl }) => {
           <h3 className="card-title">{title}</h3>
           <p className="card-description">{description}</p>
           <div className="card-buttons">
-            {codeUrl && (
-              <a
-                href={codeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn"
-              >
-                <Github className="icon" /> Código
-              </a>
-            )}
             {link && (
               <a
                 href={link}
