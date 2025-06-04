@@ -35,7 +35,7 @@ const Contact = () => {
         "template_8u8cz9e", // Reemplaza con tu Template ID de EmailJS
         {
           from_name: formData.name,
-          from_email: formData.email,
+          user_email: formData.email,
           message: formData.message,
         },
         "PeAZYh_EVqYdC-rv8" // Reemplaza con tu Public Key de EmailJS
