@@ -12,6 +12,7 @@ import pdv from "../assets/pdv-proyecto.png";
 import depie from "../assets/depie-proyecto.png";
 import hermanos from "../assets/3h-mantenimiento-proyecto.png";
 import casateka from "../assets/casateka-proyecto.png";
+import devos from "../assets/devos.png";
 
 const projects = [
   {
@@ -43,6 +44,13 @@ const projects = [
       "Gestor de tareas con autenticación y base de datos en tiempo real.",
     imageUrl: casateka,
     link: "https://casateka.netlify.app/",
+    codeUrl: "https://github.com/tu-usuario/casateka",
+  },
+  {
+    title: "Sistema de Gestión - DevOs",
+    description: "Sistema de gestión para pymes.",
+    imageUrl: devos,
+    link: "https://sistema-devos-frontend.vercel.app/login",
     codeUrl: "https://github.com/tu-usuario/casateka",
   },
 ];
