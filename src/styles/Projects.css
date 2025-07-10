@@ -70,6 +70,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover; /* ✅ Ajusta la imagen sin recortarla */
+  border-radius: 12%;
 }
 
 /* Contenido que aparece en hover */

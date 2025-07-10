@@ -8,13 +8,31 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { ExternalLink, Github } from "lucide-react";
-import pdv from "../assets/pdv-proyecto.png";
-import depie from "../assets/depie-proyecto.png";
-import hermanos from "../assets/3h-mantenimiento-proyecto.png";
-import casateka from "../assets/casateka-proyecto.png";
+import pdv from "../assets/pdv.png";
+import depie from "../assets/depie.png";
+import hermanos from "../assets/3hermanos.png";
+import casateka from "../assets/casateka.png";
 import devos from "../assets/devos.png";
+import rollingames from "../assets/rollingames.png";
+import fedra from "../assets/fedra.png";
 
 const projects = [
+  {
+    title: "Fedra",
+    description:
+      "App Web destinada a la Federación de Entidades de Discotecas de la República Argentina.",
+    imageUrl: fedra,
+    link: "https://fedra.ar/",
+    codeUrl: "https://github.com/tu-usuario/gimnasio",
+  },
+  {
+    title: "Rolling Gamers",
+    description:
+      "App Web destinada a Juegos de Pc, fue hecha como modo de práctica.",
+    imageUrl: rollingames,
+    link: "https://rollingames.netlify.app/",
+    codeUrl: "https://github.com/tu-usuario/gimnasio",
+  },
   {
     title: "Gimnasio Online",
     description:
